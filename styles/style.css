@@ -3,3 +3,23 @@
 @import url(./a11y.css);
 @import url(./theme.css);
 @import url(./base.css);
+
+
+body{
+  background-color: var(--yellow);
+}
+
+/* max를 주는 이유,,, green컬러는 769부터는 관여x */
+/* 특정구간까지만 레이어를 띄어놓고 데스크탑은 다시 설정하면 성능이 좋아짐 */
+@media(min-width:320px) and (max-width:768px) {
+  body{
+    background-color: var(--green);
+  }
+}
+
+/* 중단점 -600px 이상 */
+@media(min-width:769px){
+  body{
+    background-color: var(--blue);
+  }
+}
