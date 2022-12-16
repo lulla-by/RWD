@@ -43,7 +43,6 @@ input[type="search"] {
 .searchForm__group {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-end;
 }
 
 .searchForm__group .formInput {
