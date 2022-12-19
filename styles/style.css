@@ -12,7 +12,6 @@
   flex-flow: column nowrap;
   padding: var(--spacing-base) var(--spacing-lg);
   gap: var(--spacing-base);
-  background-color: gold;
 }
 
 /* 공통 로고*/
@@ -101,6 +100,89 @@ input[type="search"] {
   padding: var(--spacing-base) var(--spacing-lg);
 }
 
+
+/* 공통 메인 콘텐츠 섹션 제목 */
+
+[class*="__title"]{
+  margin-bottom: var(--spacing-base);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+[class*="__koTitle"]{
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: black;
+}
+.sprite{
+  padding-left: 4rem;
+  height: 3.75rem;
+  background: white url("../images/sprite_main.png") no-repeat;
+}
+
+.spriteBook{
+  background-position: 0 0 ;
+}
+
+.spriteNews{
+  background-position: top -230px left 0 ;
+}
+.spriteBoard{
+  background-position: top -115px left 0 ;
+}
+
+.spriteFavorite{
+  background-position: top -345px left 0;
+}
+
+.spriteTwitter{
+  background-position: top -460px left 0;
+}
+
+.accentBook{
+  color: var(--accent-book);
+}
+.accentNews{
+  color: var(--accent-news);
+}
+.accentBoard{
+  color: var(--accent-board);
+}
+.accentFavorite{
+  color: var(--accent-favorite);
+}
+.accentTwitter{
+  color: var(--accent-twitter);
+}
+
+
+
+/* 공통 추천 서적 */
+.book{
+  background-color: #ABD375;
+  grid-area: book;
+}
+/* 공통 새소식 서적 */
+.news{
+  background-color: goldenrod;
+  grid-area: news;
+}
+/* 공통 게시판 서적 */
+.board{
+  background-color: blanchedalmond;
+  grid-area: board;
+}
+/* 공통 인기사이트 서적 */
+.favorite{
+  background-color: orange;
+  grid-area: favorite;
+}
+/* 공통 트위터 서적 */
+.twitter{
+  background-color: skyblue;
+  grid-area: twitter;
+}
 
 
 
@@ -228,6 +310,11 @@ input[type="search"] {
   .appMain{
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    grid-template-areas:"book"
+                        "news"
+                        "board"
+                        "favorite"
+                        "twitter";
   }
 
 }
@@ -277,7 +364,6 @@ input[type="search"] {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: aqua;
   }
 
   .menu__link {
@@ -288,6 +374,21 @@ input[type="search"] {
     font-weight: 700;
     text-shadow: 1px 1px 0 var(--black), -1px -1px 0 var(--black);
   }
+
+/* 데스크탑 메인 콘텐츠 */
+
+.appMain{
+  border: 5px solid red;
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: repeat(12 , 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:"news news news news news news news news news news news news"
+                      "book book book book twitter twitter twitter twitter twitter favorite favorite favorite"
+                      "book book book book none board board board board board board board";
+}
+
 }
 
 /* 고해상도 배경이미지 미디어쿼리 */

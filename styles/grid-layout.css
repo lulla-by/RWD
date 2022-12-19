@@ -19,6 +19,9 @@
 .group5{
   background-color: salmon;
 }
+
+
+
 .group6{
   background-color: violet;
 }
@@ -41,38 +44,50 @@
   background-color: sandybrown ;
 }
 
-
-.container{
-  background: silver;
-  border: 1px solid red;
+/* 공통 레이아웃 */
+.container {
+  border: 3px solid black;
+  margin: 50px;
   display: grid;
-  grid-template-rows: auto;
-  padding: 24px;
+  grid-template-rows: repeat(3,200px);
   gap: 24px;
 }
-[class*="group"]{
-  height: 150px;
+
+.group1 {
+ grid-area: box1;
 }
-/* Small Device */
-@media(max-width:767px){
-.container{
-  grid-template-columns: repeat(1, 1fr) ;
+.group2 {
+ grid-area: box2;
+ border-radius: 30px;
 }
+.group3 {
+ grid-area: box3;
 }
-/* Medium Device */
-@media(min-width:768px){
-.container{
-  grid-template-columns: repeat(2, 1fr) ;
+.group4 {
+ grid-area: box4;
 }
+.group5 {
+ grid-area: box5;
 }
-/* Large Device */
-@media(min-width:1280px){
-.container{
-  grid-template-columns: repeat(4, 1fr) ;
+
+/* 모바일 레이아웃 */
+@media(max-width:768px){
+  .container{
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-areas: "box1 box2"
+                         "box1 box3" 
+                         "box4 box5";
+  }
+
 }
-.group1{
-  grid-column-start: 2;
-  grid-row-start: 3;
-  grid-column-end: span 3;
-}
+
+/* 데스크탑 레이아웃 */
+
+@media(min-width:769px){
+  .container{
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:  "box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2"
+                          "box1 box1 box1 box1 box3 box3 box3 box3 box3 box4 box4 box4"
+                          "box1 box1 box1 box1 none box5 box5 box5 box5 box5 box5 box5" ;
+  }
 }
