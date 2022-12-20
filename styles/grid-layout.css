@@ -20,37 +20,20 @@
   background-color: salmon;
 }
 
-
-
-.group6{
-  background-color: violet;
-}
-.group7{
-  background-color:aquamarine ;
-}
-.group8{
-  background-color:lightseagreen ;
-}
-.group9{
-  background-color: mediumpurple;
-}
-.group10{
-  background-color: midnightblue;
-}
-.group11{
-  background-color: olive;
-}
-.group12{
-  background-color: sandybrown ;
-}
-
 /* 공통 레이아웃 */
 .container {
-  border: 3px solid black;
+  border: 3px solid olive;
   margin: 50px;
   display: grid;
   grid-template-rows: repeat(3,200px);
   gap: 24px;
+}
+.container2{
+  border: 3px solid lightcoral;
+  margin: 50px;
+  width: 300px;
+  height: 200px;
+  background-color: pink;
 }
 
 .group1 {
@@ -58,7 +41,6 @@
 }
 .group2 {
  grid-area: box2;
- border-radius: 30px;
 }
 .group3 {
  grid-area: box3;
@@ -79,15 +61,29 @@
                          "box4 box5";
   }
 
+  .container2{
+    display: none;
+  }
+
 }
 
 /* 데스크탑 레이아웃 */
 
-@media(min-width:769px){
+/* @media(min-width:769px){
   .container{
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas:  "box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2"
                           "box1 box1 box1 box1 box3 box3 box3 box3 box3 box4 box4 box4"
                           "box1 box1 box1 box1 none box5 box5 box5 box5 box5 box5 box5" ;
+  }
+} */
+
+
+@media(min-width:769px){
+  .container{
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:  "box2 box2 box2 box2 box2 box3 box3 box3 box3 box4 box4 box4"
+                          "box1 box1 box1 none none box3 box3 box3 box3 box4 box4 box4"
+                          "box1 box1 box1 none none box5 box5 box5 box5 box5 box5 box5" ;
   }
 }
